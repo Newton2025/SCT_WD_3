@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="score-section">
+            <div class="score-card">
+                <h2>Match Scores</h2>
+                <table class="score-table">
+                    <thead>
+                        <tr>
+                            <th>Match</th>
+                            <th>X Score</th>
+                            <th>O Score</th>
+                            <th>Winner</th>
+                        </tr>
+                    </thead>
+                    <tbody id="matchScoreBody">
+                        <!-- Match scores will be dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="series-summary">
+                <h2>Series Summary</h2>
+                <div class="series-stats">
+                    <div class="stat-item">
+                        <span>Total Matches:</span>
+                        <span id="totalMatchesDisplay">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>X Total Wins:</span>
+                        <span id="xTotalWins">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>O Total Wins:</span>
+                        <span id="oTotalWins">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-content">
+            <div class="mode-selection">
+                <h1>Tic Tac Toe Challenge</h1>
+                <div class="mode-buttons">
+                    <button id="vsComputerBtn" class="mode-btn">
+                        <i class="icon">🤖</i> Play vs Computer
+                    </button>
+                    <button id="vsFriendBtn" class="mode-btn">
+                        <i class="icon">👥</i> Play with Friend
+                    </button>
+                </div>
+                <div class="match-config">
+                    <label for="matchCount">Number of Matches:</label>
+                    <select id="matchCount">
+                        <option value="3">Best of 3</option>
+                        <option value="5">Best of 5</option>
+                        <option value="7">Best of 7</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="game-wrapper" id="gameWrapper" style="display: none;">
+                <div class="game-header">
+                    <div class="current-match">
+                        <span>Current Match:</span>
+                        <span id="currentMatch">1</span>
+                        <span>of</span>
+                        <span id="totalMatches">3</span>
+                    </div>
+                    <div class="current-turn">
+                        <span>Current Turn:</span>
+                        <span id="currentTurnDisplay">X</span>
+                    </div>
+                </div>
+
+                <div class="game-board" id="gameBoard">
+                    <div class="board-cell" data-index="0"></div>
+                    <div class="board-cell" data-index="1"></div>
+                    <div class="board-cell" data-index="2"></div>
+                    <div class="board-cell" data-index="3"></div>
+                    <div class="board-cell" data-index="4"></div>
+                    <div class="board-cell" data-index="5"></div>
+                    <div class="board-cell" data-index="6"></div>
+                    <div class="board-cell" data-index="7"></div>
+                    <div class="board-cell" data-index="8"></div>
+                </div>
+
+                <div class="game-controls">
+                    <button id="resetMatchBtn" class="control-btn">Reset Match</button>
+                    <button id="newGameBtn" class="control-btn">New Game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="celebrationOverlay" class="celebration-overlay">
+        <div class="celebration-content">
+            <h2 id="celebrationText">Winner!</h2>
+            <div class="confetti-container" id="confettiContainer"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
